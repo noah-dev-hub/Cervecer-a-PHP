@@ -17,8 +17,8 @@
                     <!--/.navbar-header-->
                     <div id="main-nav" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="menu.html">Nuestros productos</a></li>
+                            <li><a href="index.php">Inicio</a></li>
+                            <li><a href="carta.php">Nuestros productos</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contáctanos</a></li>
                         </ul>

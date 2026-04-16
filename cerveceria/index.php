@@ -10,20 +10,13 @@
     if (isset($_GET['id_categoria'])) {
         $id_categoria = $_GET['id_categoria'];
         
-        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id WHERE productos.categoria=$id_categoria ORDER BY nombre";
+        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id WHERE productos.categoria=$id_categoria";
     } else {
-        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id ORDER BY nombre";
+        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id";
     }
-    // Consulta de los 4 productos más visitados
-    // $sql_mas_visitados = "SELECT * FROM productos ORDER BY visitas DESC LIMIT 4";
-
-    // Consulta de los 4 últimos productos añadidos
-    // $sql_mas_recientes = "SELECT * FROM productos ORDER BY id DESC LIMIT 4";
 
     $obtener_categorias = $conexion->query($sql_categorias);
     $obtener_productos = $conexion->query($sql_productos);
-    $mas_visitados = $conexion->query($sql_mas_visitados);
-    $mas_recientes = $conexion->query($sql_mas_recientes);
 ?>
 
 <!DOCTYPE html>
@@ -62,19 +55,21 @@ https://templatemo.com/tm-507-victory
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <h4>Here you can find delecious foods</h4>
-                    <h2>Asian Restaurant</h2>
-                    <p>Quisque nec nibh id lacus fringilla eleifend sed sit amet sem. Donec lectus odio, mollis a nisl non, tempor interdum nisl.</p>
+                    <h4>Productos de la mejor calidad</h4>
+                    <h2>Cervecería exquisita</h2>
+                    <p>Cervezas artesanas y de importación, refrescos, licores, cócteles y comida a tu disposición.</p>
+                    <!--
                     <div class="primary-button">
                         <a href="#" class="scroll-link" data-id="book-table">Order Right Now</a>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
     </section>
 
 
-
+    <!-- 
     <section class="cook-delecious">
         <div class="container">
             <div class="row">
@@ -104,15 +99,35 @@ https://templatemo.com/tm-507-victory
             </div>
         </div>
     </section>
+    -->
 
 
-
+    <!-- Esta zona no se ve bien en la página. Tal vez me toque modificar el CSS. Para ello, debo deshabilitar la caché del navegador. -->
+    <!-- Añadir aquí PHP para las imágenes y enlaces de las categorías. -->
     <section class="services">
         <div class="container">
             <div class="row">
+                <?php
+                    if ($obtener_categorias->num_rows > 0) {
+                        while($fila=$obtener_categorias->fetch_assoc()) {
+                            ?>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="service-item">
+                                    <a href="carta.php?id_categoria=<?php echo $fila['id_categoria'] ?>">
+                                    <img src="img/cerveza/leffe.png" alt="Cervezas" width="150px">
+                                    <h4>Cervezas</h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php ;
+                        }
+                    } else {
+                        echo "No hay categorías.";
+                    }
+                ?>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="service-item">
-                        <a href="menu.html">
+                        <a href="carta.php?id_categoria=<?php echo $fila['id_categoria'] ?>">
                         <img src="img/cerveza/leffe.png" alt="Cervezas" width="150px">
                         <h4>Cervezas</h4>
                         </a>
@@ -120,7 +135,7 @@ https://templatemo.com/tm-507-victory
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="service-item">
-                        <a href="menu.html">
+                        <a href="carta.php">
                         <img src="img/vino/ribera.png" alt="Vinos" width="105px">
                         <h4>Vinos</h4>
                         </a>
@@ -128,7 +143,7 @@ https://templatemo.com/tm-507-victory
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="service-item">
-                        <a href="menu.html">
+                        <a href="carta.php">
                         <img src="img/refresco/cocacola.png" alt="Refrescos" width="115px">
                         <h4>Refrescos</h4>
                         </a>
@@ -136,7 +151,7 @@ https://templatemo.com/tm-507-victory
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="service-item">
-                        <a href="menu.html">
+                        <a href="carta.php">
                         <img src="img/licor/ginebra.png" alt="Licores" width="165px">
                         <h4>Licores</h4>
                         </a>
@@ -144,7 +159,7 @@ https://templatemo.com/tm-507-victory
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="service-item">
-                        <a href="menu.html">
+                        <a href="carta.php">
                         <img src="img/coctel/mojito.png" alt="Cocteles" width="180px">
                         <h4>Cócteles</h4>
                         </a>
@@ -152,7 +167,7 @@ https://templatemo.com/tm-507-victory
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="service-item">
-                        <a href="menu.html">
+                        <a href="carta.php">
                         <img src="img/comida/bocadillo.png" alt="Comida" width="180px">
                         <h4>Comida</h4>
                         </a>
@@ -163,7 +178,7 @@ https://templatemo.com/tm-507-victory
     </section>
 
 
-
+    <!--
     <section id="book-table">
         <div class="container">
             <div class="row">
@@ -245,9 +260,9 @@ https://templatemo.com/tm-507-victory
             </div>
         </div>
     </section>
+    -->
 
-
-
+    <!--
     <section class="get-app">
         <div class="container">
             <div class="row">
@@ -260,9 +275,9 @@ https://templatemo.com/tm-507-victory
             </div>
         </div>
     </section>
+    -->
 
-
-
+    <!--
     <section class="featured-food">
         <div class="container">
             <div class="row">
@@ -307,7 +322,7 @@ https://templatemo.com/tm-507-victory
             </div>
         </div>
     </section>
-
+    -->
 
 
     <section class="our-blog">
@@ -387,7 +402,7 @@ https://templatemo.com/tm-507-victory
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Signup for our newsletters</h2>
+                        <h2>Apúntate para recibir las novedades</h2>
                     </div>
                 </div>
             </div>
@@ -395,12 +410,12 @@ https://templatemo.com/tm-507-victory
                 <div class="row">
                     <div class="col-md-4 col-md-offset-3">
                         <fieldset>
-                            <input name="email" type="text" class="form-control" id="email" placeholder="Enter your email here..." required="">
+                            <input name="email" type="text" class="form-control" id="email" placeholder="Ingresa tu email aquí..." required="">
                         </fieldset>
                     </div>
                     <div class="col-md-2">
                         <fieldset>
-                            <button type="submit" id="form-submit" class="btn">Send Message</button>
+                            <button type="submit" id="form-submit" class="btn">Enviar mensaje</button>
                         </fieldset>
                     </div>
                 </div>
@@ -409,7 +424,7 @@ https://templatemo.com/tm-507-victory
     </section>
 
 
-    <!-- Pendiente pasar 'footer' a un archivo aparte y traerlo con 'include' -->
+    <!-- FOOTER -->
     <?php include "footer.php"; ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

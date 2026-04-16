@@ -1,3 +1,27 @@
+<?php
+    // Mostrar errores
+    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 1);
+    error_reporting(-1);
+    // Incluir la conexión
+    require_once "conexion.php";
+    // Comprobar que hay id_libro en la URL
+    // Si la hay, crea una variable con SELECT
+
+    $sql_categorias = "SELECT * FROM categorias";
+    
+    if (isset($_GET['id_categoria'])) {
+        $id_categoria = $_GET['id_categoria'];
+        
+        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id WHERE productos.categoria=$id_categoria";
+    } else {
+        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id";
+    }
+
+    $obtener_categorias = $conexion->query($sql_categorias);
+    $obtener_productos = $conexion->query($sql_productos);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,49 +50,23 @@ https://templatemo.com/tm-507-victory
     </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <a href="#" class="navbar-brand scroll-top">Victory</a>
-            <nav class="navbar navbar-inverse" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!--/.navbar-header-->
-                <div id="main-nav" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Our Menus</a></li>
-                        <li><a href="blog.html">Blog Entries</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <!--/.navbar-collapse-->
-            </nav>
-            <!--/.navbar-->
-        </div>
-        <!--/.container-->
-    </div>
-    <!--/.header-->
+
+    <?php include "header.php" ?>
 
 
     <section class="page-heading">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Our Menus</h1>
-                    <p>Curabitur at dolor sed felis lacinia ultricies sit amet vel sem. Vestibulum diam leo, sodales tempor lectus sed, varius gravida mi.</p>
+                    <h1>Nuestros productos</h1>
+                    <p>Disfrute de la mejor selección.</p>
                 </div>
             </div>
         </div>
     </section>
 
 
-
+    <!-- Añadir aquí PHP para mostrar los productos. Si no hay categoría en la URL, mostrará todos. -->
     <section class="breakfast-menu">
         <div class="container">
             <div class="row">
@@ -123,7 +121,7 @@ https://templatemo.com/tm-507-victory
     </section>
 
 
-
+    <!-- 
     <section class="lunch-menu">
         <div class="container">
             <div class="row">
@@ -176,7 +174,8 @@ https://templatemo.com/tm-507-victory
             </div>
         </div>
     </section>
-
+    -->
+    <!--
     <section class="dinner-menu">
         <div class="container">
             <div class="row">
@@ -229,9 +228,10 @@ https://templatemo.com/tm-507-victory
             </div>
         </div>
     </section>
+    -->
 
 
-
+    <!--
     <section id="book-table">
         <div class="container">
             <div class="row">
@@ -313,30 +313,11 @@ https://templatemo.com/tm-507-victory
             </div>
         </div>
     </section>
+    -->
 
 
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <p>Copyright &copy; 2020 Victory Template</p>
-                </div>
-                <div class="col-md-4">
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <p>Design: TemplateMo</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php" ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
