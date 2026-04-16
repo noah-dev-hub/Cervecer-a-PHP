@@ -104,7 +104,8 @@ https://templatemo.com/tm-507-victory
 
     <!-- Esta zona no se ve bien en la página. Tal vez me toque modificar el CSS. Para ello, debo deshabilitar la caché del navegador. -->
     <!-- Añadir aquí PHP para las imágenes y enlaces de las categorías. -->
-    <!-- Han dejado de verse las imágenes por alguna razón. -->
+    <!-- Han dejado de verse las imágenes por alguna razón. Muestran el 'alt' porque se está generando algún error, pero no lo encuentro.
+         Pendiente preguntar a Mariluz. -->
     <section class="services">
         <div class="container">
             <div class="row">
@@ -115,7 +116,7 @@ https://templatemo.com/tm-507-victory
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="service-item">
                                     <a href="carta.php?id_categoria=<?php echo $fila['id'] ?>">
-                                    <img src="img/img_cerveceria/<?php $fila['portada'] ?>" alt="<?php $fila['nombre'] ?>">
+                                    <img src="img/img_cerveceria/<?php echo $fila['portada'] ?>" alt="<?php echo $fila['nombre'] ?>">
                                     <h4><?php echo $fila['nombre'] ?></h4>
                                     </a>
                                 </div>
@@ -126,48 +127,6 @@ https://templatemo.com/tm-507-victory
                         echo "No hay categorías.";
                     }
                 ?>
-                <!--    
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="carta.php?id_categoria=<?php echo $fila['id'] ?>">
-                        <img src="img/vino/ribera.png" alt="Vinos" width="105px">
-                        <h4>Vinos</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="carta.php">
-                        <img src="img/refresco/cocacola.png" alt="Refrescos" width="115px">
-                        <h4>Refrescos</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="carta.php">
-                        <img src="img/licor/ginebra.png" alt="Licores" width="165px">
-                        <h4>Licores</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="carta.php">
-                        <img src="img/coctel/mojito.png" alt="Cocteles" width="180px">
-                        <h4>Cócteles</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="carta.php">
-                        <img src="img/comida/bocadillo.png" alt="Comida" width="180px">
-                        <h4>Comida</h4>
-                        </a>
-                    </div>
-                </div>
-                -->
             </div>
         </div>
     </section>
