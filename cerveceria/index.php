@@ -104,6 +104,7 @@ https://templatemo.com/tm-507-victory
 
     <!-- Esta zona no se ve bien en la página. Tal vez me toque modificar el CSS. Para ello, debo deshabilitar la caché del navegador. -->
     <!-- Añadir aquí PHP para las imágenes y enlaces de las categorías. -->
+    <!-- Han dejado de verse las imágenes por alguna razón. -->
     <section class="services">
         <div class="container">
             <div class="row">
@@ -113,29 +114,22 @@ https://templatemo.com/tm-507-victory
                             ?>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="service-item">
-                                    <a href="carta.php?id_categoria=<?php echo $fila['id_categoria'] ?>">
-                                    <img src="img/cerveza/leffe.png" alt="Cervezas" width="150px">
-                                    <h4>Cervezas</h4>
+                                    <a href="carta.php?id_categoria=<?php echo $fila['id'] ?>">
+                                    <img src="img/img_cerveceria/<?php $fila['portada'] ?>" alt="<?php $fila['nombre'] ?>">
+                                    <h4><?php echo $fila['nombre'] ?></h4>
                                     </a>
                                 </div>
                             </div>
-                            <?php ;
+                            <?php
                         }
                     } else {
                         echo "No hay categorías.";
                     }
                 ?>
+                <!--    
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="service-item">
-                        <a href="carta.php?id_categoria=<?php echo $fila['id_categoria'] ?>">
-                        <img src="img/cerveza/leffe.png" alt="Cervezas" width="150px">
-                        <h4>Cervezas</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="carta.php">
+                        <a href="carta.php?id_categoria=<?php echo $fila['id'] ?>">
                         <img src="img/vino/ribera.png" alt="Vinos" width="105px">
                         <h4>Vinos</h4>
                         </a>
@@ -173,6 +167,7 @@ https://templatemo.com/tm-507-victory
                         </a>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </section>
