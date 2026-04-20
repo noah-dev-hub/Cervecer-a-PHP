@@ -13,9 +13,9 @@
     if (isset($_GET['id_categoria'])) {
         $id_categoria = $_GET['id_categoria'];
         
-        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id WHERE productos.categoria=$id_categoria";
+        $sql_productos = "SELECT productos.nombre, categorias.nombre, tipos.nombre, productos.fabricante, productos.graduacion, productos.precio, productos.imagen FROM productos JOIN categorias ON productos.categoria=categorias.id JOIN tipos ON productos.tipo=tipos.id WHERE productos.categoria=$id_categoria";
     } else {
-        $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id";
+        $sql_productos = "SELECT productos.nombre, categorias.nombre, tipos.nombre, productos.fabricante, productos.graduacion, productos.precio, productos.imagen FROM productos JOIN categorias ON productos.categoria=categorias.id JOIN tipos ON productos.tipo=tipos.id";
     }
 
     $obtener_categorias = $conexion->query($sql_categorias);
@@ -70,7 +70,7 @@ https://templatemo.com/tm-507-victory
     <section class="breakfast-menu">
         <?php
             if ($obtener_productos->num_rows > 0) {
-                while($fila=$obtener_productos->fetch_assoc()) {
+                while($fila=$obtener_productos->fetch_array()) {
                     ?>
                     <div class="container">
                         <div class="row">
@@ -79,17 +79,17 @@ https://templatemo.com/tm-507-victory
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="left-image">
-                                                <img src="./img/imgcerveceria/<?php echo $fila['imagen'] ?>" alt="<?php echo $fila['nombre'] ?>">
+                                                <img src="./img/imgcerveceria/<?php echo $fila[6] ?>" alt="<?php echo $fila[0] ?>" width="150px" height="300px">
                                             </div>
                                         </div>
                                         <div class="col-md-7">
-                                            <h2><?php echo $fila['nombre'] ?></h2>
+                                            <h2><?php echo $fila[0] ?></h2>
                                             <ul>
-                                                <li><?php echo $fila['categoria'] ?></li>
-                                                <li><?php echo $fila['tipo'] ?></li>
-                                                <li><?php echo $fila['fabricante'] ?></li>
-                                                <li><?php echo $fila['graduacion'] ?></li>
-                                                <li><?php echo $fila['precio'] ?></li>
+                                                <li>Categoría: <?php echo $fila[1] ?></li>
+                                                <li>Tipo: <?php echo $fila[2] ?></li>
+                                                <li>Fabricante: <?php echo $fila[3] ?></li>
+                                                <li>Graduación: <?php echo $fila[4] ?></li>
+                                                <li>Precio: <?php echo $fila[5] ?></li>
                                             </ul>
                                         </div>
                                     </div>
