@@ -79,7 +79,7 @@ https://templatemo.com/tm-507-victory
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="left-image">
-                                                <img src="img/img_cerveceria/<?php echo $fila['imagen'] ?>" alt="<?php echo $fila['nombre'] ?>">
+                                                <img src="./img/imgcerveceria/<?php echo $fila['imagen'] ?>" alt="<?php echo $fila['nombre'] ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -101,7 +101,7 @@ https://templatemo.com/tm-507-victory
                     <?php
                 }
             } else {
-                echo "No hay libros.";
+                echo "No hay productos.";
             }
         ?>
         <div class="container">

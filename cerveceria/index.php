@@ -116,7 +116,7 @@ https://templatemo.com/tm-507-victory
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="service-item">
                                     <a href="carta.php?id_categoria=<?php echo $fila['id'] ?>">
-                                    <img src="img/img_cerveceria/<?php echo $fila['portada'] ?>" alt="<?php echo $fila['nombre'] ?>">
+                                    <img src="./img/imgcerveceria/<?php echo $fila['portada'] ?>" alt="<?php echo $fila['nombre'] ?>">
                                     <h4><?php echo $fila['nombre'] ?></h4>
                                     </a>
                                 </div>
