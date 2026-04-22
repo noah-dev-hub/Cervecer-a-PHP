@@ -7,7 +7,7 @@
 Victory HTML CSS Template
 https://templatemo.com/tm-507-victory
 -->
-        <title>Victory - Blog page</title>
+        <title>Cerveceria de Noah - Blog</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -26,42 +26,15 @@ https://templatemo.com/tm-507-victory
     </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <a href="#" class="navbar-brand scroll-top">Victory</a>
-            <nav class="navbar navbar-inverse" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!--/.navbar-header-->
-                <div id="main-nav" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Our Menus</a></li>
-                        <li><a href="blog.html">Blog Entries</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <!--/.navbar-collapse-->
-            </nav>
-            <!--/.navbar-->
-        </div>
-        <!--/.container-->
-    </div>
+    <?php include "header.php" ?>
     <!--/.header-->
-
 
     <section class="page-heading">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Our Blog</h1>
-                    <p>You can feel free to use our template for any purpose of your websites. Thank you. Template re-distribution is <strong>not allowed</strong> in any download site.</p>
+                    <h1>Nuestro blog</h1>
+                    <p>Aquí encontrarás las historias que tenemos que contarte sobre nuestro día a día.</p>
                 </div>
             </div>
         </div>
@@ -146,7 +119,7 @@ https://templatemo.com/tm-507-victory
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Signup for our newsletters</h2>
+                        <h2>Apúntate para recibir las novedades</h2>
                     </div>
                 </div>
             </div>
@@ -154,12 +127,12 @@ https://templatemo.com/tm-507-victory
                 <div class="row">
                     <div class="col-md-4 col-md-offset-3">
                         <fieldset>
-                            <input name="email" type="text" class="form-control" id="email" placeholder="Enter your email here..." required="">
+                            <input name="email" type="text" class="form-control" id="email" placeholder="Ingresa tu email aquí..." required="">
                         </fieldset>
                     </div>
                     <div class="col-md-2">
                         <fieldset>
-                            <button type="submit" id="form-submit" class="btn">Send Message</button>
+                            <button type="submit" id="form-submit" class="btn">Enviar mensaje</button>
                         </fieldset>
                     </div>
                 </div>
@@ -168,27 +141,7 @@ https://templatemo.com/tm-507-victory
     </section>
 
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <p>Copyright &copy; 2020 Victory Template</p>
-                </div>
-                <div class="col-md-4">
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <p>Design: TemplateMo</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php" ?>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

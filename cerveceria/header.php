@@ -19,8 +19,8 @@
                         <ul class="nav navbar-nav">
                             <li><a href="index.php">Inicio</a></li>
                             <li><a href="carta.php">Nuestros productos</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contáctanos</a></li>
+                            <li><a href="blog.php">Blog</a></li>
+                            <li><a href="contact.php">Contáctanos</a></li>
                         </ul>
                     </div>
                     <!--/.navbar-collapse-->

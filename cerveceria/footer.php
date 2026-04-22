@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <p>Copyright &copy; 2020 Victory Template</p>
+                        <p>Copyright &copy; 2026 Cervecería Noah</p>
                     </div>
                     <div class="col-md-4">
                         <ul class="social-icons">
@@ -18,7 +18,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <p>Design: TemplateMo</p>
+                        <p>Design: Noah</p>
                     </div>
                 </div>
             </div>

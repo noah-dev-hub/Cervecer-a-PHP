@@ -284,7 +284,7 @@ https://templatemo.com/tm-507-victory
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Our blog post</h2>
+                        <h2>Nuestro blog</h2>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
 Victory HTML CSS Template
 https://templatemo.com/tm-507-victory
 -->
-        <title>Victory - Contact page</title>
+        <title>Cerveceria de Noah - Contacto</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -26,42 +26,14 @@ https://templatemo.com/tm-507-victory
     </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <a href="#" class="navbar-brand scroll-top">Victory</a>
-            <nav class="navbar navbar-inverse" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!--/.navbar-header-->
-                <div id="main-nav" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Our Menus</a></li>
-                        <li><a href="blog.html">Blog Entries</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <!--/.navbar-collapse-->
-            </nav>
-            <!--/.navbar-->
-        </div>
-        <!--/.container-->
-    </div>
-    <!--/.header-->
-
+    <?php include "header.php" ?>
 
     <section class="page-heading">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Contact Us</h1>
-                    <p>Whatever drinking vinegar hella fingerstache shoreditch kickstarter kitsch. La croix hella iceland flexitarian letterpress.</p>
+                    <h1>Contáctanos</h1>
+                    <p>Siéntete libre de consultar o sugerir cualquier cosa.</p>
                 </div>
             </div>
         </div>
@@ -74,27 +46,27 @@ https://templatemo.com/tm-507-victory
             <div class="row">
                 <div class="col-md-6">
                     <div class="section-heading">
-                        <h2>Message</h2>
+                        <h2>Mensaje</h2>
                     </div>
                     <form id="contact" action="" method="post">
                         <div class="row">
                             <div class="col-md-6">
                                 <fieldset>
-                                    <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Tu nombre..." required="">
                                 </fieldset>
                                 <fieldset>
-                                    <input name="email" type="text" class="form-control" id="email" placeholder="Your email..." required="">
+                                    <input name="email" type="text" class="form-control" id="email" placeholder="Tu email..." required="">
                                 </fieldset>
                                 <fieldset>
-                                    <input name="phone" type="text" class="form-control" id="phone" placeholder="Your phone..." required="">
+                                    <input name="phone" type="text" class="form-control" id="phone" placeholder="Tu teléfono..." required="">
                                 </fieldset>
                             </div>
                             <div class="col-md-6">
                                 <fieldset>
-                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Tu mensaje..." required=""></textarea>
                                 </fieldset>
                                 <fieldset>
-                                    <button type="submit" id="form-submit" class="btn">Send Message</button>
+                                    <button type="submit" id="form-submit" class="btn">Enviar Mensaje</button>
                                 </fieldset>
                             </div>
                         </div>
@@ -102,8 +74,8 @@ https://templatemo.com/tm-507-victory
                 </div>
                 <div class="col-md-6">
                     <div class="section-heading contact-info">
-                        <h2>Contact Info</h2>
-                        <p>Pellentesque nec orci in erat venenatis viverra. Vivamus in lorem et leo feugiat ullamcorper. Donec volutpat fermentum erat non aliquet. Cras fermentum, risus a blandit sodales, erat turpis eleifend lacus, venenatis mollis leo lorem vel eros. Quisque et sem tempus, feugiat urna iaculis, tempor metus.<br><br><em>30 Raffles Ave, <br>Singapore 039803</em></p>
+                        <h2>Información de contacto</h2>
+                        <p>Pellentesque nec orci in erat venenatis viverra. Vivamus in lorem et leo feugiat ullamcorper. Donec volutpat fermentum erat non aliquet. Cras fermentum, risus a blandit sodales, erat turpis eleifend lacus, venenatis mollis leo lorem vel eros. Quisque et sem tempus, feugiat urna iaculis, tempor metus.<br><br><em>Calle de Cervantes 3, <br>Quart de Poblet 46930</em></p>
                     </div>
                 </div>
             </div>
@@ -123,7 +95,7 @@ https://templatemo.com/tm-507-victory
             3. Click "Share" and choose "Embed map" tab
             4. Copy only URL and paste it within the src="" field below
         -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7895.485196115994!2d103.85995441789784!3d1.2880401763270322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7fb4e58ad9cd826e!2sSingapore+Flyer!5e0!3m2!1sen!2sth!4v1505825620371" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.4032619398213!2d-0.442975323394862!3d39.482807871605104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604ff779223b39%3A0xc60596edf6e35ebd!2sCentro%20de%20FP%20SOLVAM!5e0!3m2!1ses!2ses!4v1776850572608!5m2!1ses!2ses" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -132,27 +104,7 @@ https://templatemo.com/tm-507-victory
 
 
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <p>Copyright &copy; 2020 Victory Template</p>
-                </div>
-                <div class="col-md-4">
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <p>Design: TemplateMo</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php" ?>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
