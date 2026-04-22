@@ -15,8 +15,11 @@
         $sql_productos = "SELECT * FROM productos JOIN categorias ON productos.categoria=categorias.id";
     }
 
+    $sql_mas_visitada = "SELECT * FROM categorias ORDER BY visitas DESC LIMIT 1";
+
     $obtener_categorias = $conexion->query($sql_categorias);
     $obtener_productos = $conexion->query($sql_productos);
+    $mas_visitada = $conexion->query($sql_mas_visitada);
 ?>
 
 <!DOCTYPE html>
@@ -103,9 +106,6 @@ https://templatemo.com/tm-507-victory
 
 
     <!-- Esta zona no se ve bien en la página. Tal vez me toque modificar el CSS. Para ello, debo deshabilitar la caché del navegador. -->
-    <!-- Añadir aquí PHP para las imágenes y enlaces de las categorías. -->
-    <!-- Han dejado de verse las imágenes por alguna razón. Muestran el 'alt' porque se está generando algún error, pero no lo encuentro.
-         Pendiente preguntar a Mariluz. -->
     <section class="services">
         <div class="container">
             <div class="row">
@@ -231,52 +231,27 @@ https://templatemo.com/tm-507-victory
     </section>
     -->
 
-    <!--
+    
     <section class="featured-food">
         <div class="container">
             <div class="row">
                 <div class="heading">
-                    <h2>Weekly Featured Food</h2>
+                    <h2>Categoría más visitada</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="food-item">
-                        <h2>Breakfast</h2>
-                        <img src="img/breakfast_item.jpg" alt="">
-                        <div class="price">$4.50</div>
-                        <div class="text-content">
-                            <h4>Kale Chips Art Party</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
+                    <?php while($fila=$mas_visitada->fetch_assoc()) { ?>
+                        <div class="food-item">
+                            <h2><?php echo $fila['nombre'] ?></h2>
+                            <img src="./img/imgcerveceria/<?php echo $fila['portada'] ?>" alt="<?php echo $fila['nombre'] ?>">
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="food-item">
-                        <h2>Lunch</h2>
-                        <img src="img/lunch_item.jpg" alt="">
-                        <div class="price">$7.50</div>
-                        <div class="text-content">
-                            <h4>Taiyaki Gastro Tousled</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="food-item">
-                        <h2>Dinner</h2>
-                        <img src="img/dinner_item.jpg" alt="">
-                        <div class="price">$12.50</div>
-                        <div class="text-content">
-                            <h4>Batch Squid Jean Shorts</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
     </section>
-    -->
+    
 
 
     <section class="our-blog">

@@ -13,6 +13,7 @@
     if (isset($_GET['id_categoria'])) {
         $id_categoria = $_GET['id_categoria'];
         
+        $conexion->query("UPDATE categorias SET visitas=visitas+1 WHERE id=$id_categoria");
         $sql_productos = "SELECT productos.nombre, categorias.nombre, tipos.nombre, productos.fabricante, productos.graduacion, productos.precio, productos.imagen FROM productos JOIN categorias ON productos.categoria=categorias.id JOIN tipos ON productos.tipo=tipos.id WHERE productos.categoria=$id_categoria";
     } else {
         $sql_productos = "SELECT productos.nombre, categorias.nombre, tipos.nombre, productos.fabricante, productos.graduacion, productos.precio, productos.imagen FROM productos JOIN categorias ON productos.categoria=categorias.id JOIN tipos ON productos.tipo=tipos.id";
