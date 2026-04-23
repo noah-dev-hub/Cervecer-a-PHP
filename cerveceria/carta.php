@@ -98,34 +98,12 @@ https://templatemo.com/tm-507-victory
                             </div>
                         </div>
                     </div>
-                    
                     <?php
                 }
             } else {
                 echo "No hay productos.";
             }
         ?>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="breakfast-menu-content">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="left-image">
-                                    <img src="img/breakfast_menu.jpg" alt="Breakfast">
-                                </div>
-                            </div>
-                            <div class="col-md-7">
-                                <h2>Breakfast Menu</h2>
-                                <ul>
-                                    <li>Hola</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
 

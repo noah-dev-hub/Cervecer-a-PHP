@@ -244,7 +244,7 @@ https://templatemo.com/tm-507-victory
                     <?php while($fila=$mas_visitada->fetch_assoc()) { ?>
                         <div class="food-item">
                             <h2><?php echo $fila['nombre'] ?></h2>
-                            <img src="./img/imgcerveceria/<?php echo $fila['portada'] ?>" alt="<?php echo $fila['nombre'] ?>">
+                            <a href="carta.php?id_categoria=<?php echo $fila['id'] ?>"><img src="./img/imgcerveceria/<?php echo $fila['portada'] ?>" alt="<?php echo $fila['nombre'] ?>"></a>
                         </div>
                     <?php } ?>
                 </div>
