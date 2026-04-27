@@ -61,10 +61,12 @@ https://templatemo.com/tm-507-victory
                         <div class="col-md-8 col-md-offset-2">
                             <div class="blog-item">
                                 <img src="img/blog_item_01.jpg" alt="">
-                                <div class="date"><?php echo $fila['fecha'] ?></div>
+                                <div class="date"><?php 
+                                $fecha_seg = (strtotime($fila['fecha']));
+                                echo date("d m/Y", $fecha_seg); ?></div>;
                                 <div class="down-content">
                                     <h4><?php echo $fila['titulo'] ?></h4>
-                                    <p><?php echo $fila['texto'] ?></p>
+                                    <p><?php echo substr($fila['texto'], 50) ?></p>
                                     <div class="text-button">
                                         <a href="detalle.php?id_blog=<?php echo $fila['id'] ?>">+ Leer más</a>
                                     </div>
