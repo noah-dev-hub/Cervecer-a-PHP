@@ -236,7 +236,7 @@ https://templatemo.com/tm-507-victory
         <div class="container">
             <div class="row">
                 <div class="heading">
-                    <h2>Categoría más visitada</h2>
+                    <h2>Categoría más popular</h2>
                 </div>
             </div>
             <div class="row">

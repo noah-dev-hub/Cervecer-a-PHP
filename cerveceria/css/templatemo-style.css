@@ -113,6 +113,17 @@ p {
 	margin: 0px 20px;
 }
 
+.navbar-nav li ul {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: #eaf0ff;
+}
+
+.navbar-nav li:hover ul {
+	display: block;
+}
+
 .navbar-nav li a {
 	font-family: 'Roboto', sans-serif;
 	font-size: 13px;

@@ -69,6 +69,12 @@ https://templatemo.com/tm-507-victory
 
     <!-- Añadir aquí PHP para mostrar los productos. Si no hay categoría en la URL, mostrará todos. -->
     <section class="breakfast-menu">
+        <?php 
+        if (isset($_GET['id_categoria'])) {
+            $categoria = $obtener_productos->fetch_array() ?>
+            <h2><?php echo $categoria[1] ?></h2>
+        <?php } ?>
+            
         <?php
             if ($obtener_productos->num_rows > 0) {
                 while($fila=$obtener_productos->fetch_array()) {
