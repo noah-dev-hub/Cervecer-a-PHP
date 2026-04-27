@@ -6,6 +6,8 @@
     require_once "conexion.php";
     
     $sql_categorias = "SELECT * FROM categorias";
+    $sql_blogs = "SELECT * FROM blogs ORDER BY id DESC LIMIT 4";
+    $obtener_blogs = $conexion->query($sql_blogs);
     
     if (isset($_GET['id_categoria'])) {
         $id_categoria = $_GET['id_categoria'];
@@ -20,6 +22,7 @@
     $obtener_categorias = $conexion->query($sql_categorias);
     $obtener_productos = $conexion->query($sql_productos);
     $mas_visitada = $conexion->query($sql_mas_visitada);
+    $obtener_blogs = $conexion->query($sql_blogs);
 ?>
 
 <!DOCTYPE html>
@@ -264,62 +267,25 @@ https://templatemo.com/tm-507-victory
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="blog-post">
-                        <img src="img/blog_post_01.jpg" alt="">
-                        <div class="date">26 Oct 2020</div>
-                        <div class="right-content">
-                            <h4>Stumptown Tofu Schlitz</h4>
-                            <span>Branding / Admin</span>
-                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
-                            <div class="text-button">
-                                <a href="#">Continue Reading</a>
+                <?php
+                if($obtener_blogs->num_rows > 0) {
+                    while($fila=$obtener_blogs->fetch_assoc()) { ?>
+                        <div class="col-md-6">
+                            <div class="blog-post">
+                                <img src="img/blog_post_01.jpg" alt="">
+                                <div class="date"><?php echo $fila['fecha'] ?></div>
+                                <div class="right-content">
+                                    <h4><?php echo $fila['titulo'] ?></h4>
+                                    <p><?php echo $fila['texto'] ?></p>
+                                    <div class="text-button">
+                                        <a href="detalle.php?id_blog=<?php echo $fila['id'] ?>">+ Leer más</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-post">
-                        <img src="img/blog_post_02.jpg" alt="">
-                        <div class="date">21 Oct 2020</div>
-                        <div class="right-content">
-                            <h4>Succulents Hashtag Folk</h4>
-                            <span>Branding / Admin</span>
-                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
-                            <div class="text-button">
-                                <a href="#">Continue Reading</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-post">
-                        <img src="img/blog_post_03.jpg" alt="">
-                        <div class="date">11 Oct 2020</div>
-                        <div class="right-content">
-                            <h4>Knaus Sriracha Pinterest</h4>
-                            <span>Dessert / Chef</span>
-                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
-                            <div class="text-button">
-                                <a href="#">Continue Reading</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-post">
-                        <img src="img/blog_post_04.jpg" alt="">
-                        <div class="date">03 Oct 2020</div>
-                        <div class="right-content">
-                            <h4>Crucifix Selvage Coat</h4>
-                            <span>Plate / Chef</span>
-                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
-                            <div class="text-button">
-                                <a href="#">Continue Reading</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    }
+                } ?>
             </div>
         </div>
     </section>
