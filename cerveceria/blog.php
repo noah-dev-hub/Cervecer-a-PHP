@@ -66,7 +66,7 @@ https://templatemo.com/tm-507-victory
                                 echo date("d m/Y", $fecha_seg); ?></div>;
                                 <div class="down-content">
                                     <h4><?php echo $fila['titulo'] ?></h4>
-                                    <p><?php echo substr($fila['texto'], 50) ?></p>
+                                    <p><?php echo substr($fila['texto'], 0, 25) ?>...</p>
                                     <div class="text-button">
                                         <a href="detalle.php?id_blog=<?php echo $fila['id'] ?>">+ Leer más</a>
                                     </div>

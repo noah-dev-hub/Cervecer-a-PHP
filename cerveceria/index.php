@@ -276,7 +276,7 @@ https://templatemo.com/tm-507-victory
                                 <div class="date"><?php echo $fila['fecha'] ?></div>
                                 <div class="right-content">
                                     <h4><?php echo $fila['titulo'] ?></h4>
-                                    <p><?php echo $fila['texto'] ?></p>
+                                    <p><?php echo substr($fila['texto'], 0, 25) ?>...</p>
                                     <div class="text-button">
                                         <a href="detalle.php?id_blog=<?php echo $fila['id'] ?>">+ Leer más</a>
                                     </div>
